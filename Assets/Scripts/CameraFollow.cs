@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player;  // Reference to the player object
+    public Vector3 offset;   // Offset position for the camera relative to the player
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Ensure player reference is set
+        if (player == null)
+        {
+            Debug.LogError("Player reference not set in CameraFollow script!");
+            return;
+        }
+
+        // Set the camera's position to follow the player with the desired offset
+        transform.position = player.position + offset;
     }
 }
