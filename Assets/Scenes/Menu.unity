@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 356543943}
   - component: {fileID: 356543942}
   - component: {fileID: 356543941}
+  - component: {fileID: 356543944}
   m_Layer: 0
   m_Name: New Game Button
   m_TagString: Untagged
@@ -494,7 +495,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 356543942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 356543944}
+        m_TargetAssemblyTypeName: LobbySceneLoader, Assembly-CSharp
+        m_MethodName: LoadLobbyScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &356543942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +546,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356543939}
   m_CullTransparentMesh: 1
+--- !u!114 &356543944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356543939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a70ed28fc8142449bd71c4ca1ae251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376608870
 GameObject:
   m_ObjectHideFlags: 0
