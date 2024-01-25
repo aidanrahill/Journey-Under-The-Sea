@@ -10,13 +10,13 @@ public class InkProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("Despawn", 5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.up * -speed * Time.deltaTime;
+        transform.position += transform.right * speed * Time.deltaTime;
 
         //// Check for collision with player or screen boundaries
         //if (Physics2D.OverlapCircle(transform.position, GetComponent<CircleCollider2D>().radius, playerLayer) ||
@@ -24,5 +24,10 @@ public class InkProjectile : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+    }
+
+    void Despawn ()
+    {
+        Destroy(gameObject);
     }
 }
