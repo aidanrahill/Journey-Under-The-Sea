@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,14 @@ public class SquidBoss : MonoBehaviour
     public Transform[] pathwayPoint;
     int currentPathwayPoint;
 
+    public float speed = 2;
+    public float shotDelay = 1;
+    Boolean movingForward = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(ShootProjectileSpread());
     }
 
     // Update is called once per frame
@@ -23,12 +28,16 @@ public class SquidBoss : MonoBehaviour
         Transform targetWaypoint = pathwayPoint[currentPathwayPoint];
         
         // Move boss towards target waypoint
-        // ...
+        if (movingForward)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
+        }
 
+        // new way point
         if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
         {
             currentPathwayPoint = (currentPathwayPoint + 1) % pathwayPoint.Length;
-            //movingForward = !movingForward;
+            movingForward = true;
         }
 
         // manual testing shoot stuff
@@ -41,7 +50,54 @@ public class SquidBoss : MonoBehaviour
 
     }
 
-    //shoots projectiles
+    // shoot a spread of 3
+    IEnumerator ShootProjectileSpread()
+    {
+
+        yield return new WaitForSeconds(3*shotDelay);
+        //Debug.Log("shootagin");
+
+        movingForward = false;
+
+        for (int i = 0; i < 3; i++)
+        {
+            Vector3 direction = origin.position - target.position;
+            
+            // calc angle for squid to face player
+            float angle = Unity.Mathematics.math.degrees(Unity.Mathematics.math.atan2(direction.x, direction.y));
+
+
+            Debug.Log("preangle" + angle);
+
+            angle -= 90;
+            angle = angle % 360;
+            if (angle > 180)
+                angle -= 360;
+
+            Debug.Log("angle" + angle);
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+
+            ShootProjectile();
+            Debug.Log("created " + i);
+
+            yield return new WaitForSeconds(shotDelay);
+        }
+
+        // reset rotation
+
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        movingForward = true;
+
+        //Debug.Log("ture");
+
+
+        // restart
+        StartCoroutine(ShootProjectileSpread());
+    }
+
+    //shoot single projectile
     public void ShootProjectile()
     {
         GameObject ink = Instantiate(InkProjectile, origin.position, origin.rotation);

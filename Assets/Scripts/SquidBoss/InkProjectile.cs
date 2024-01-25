@@ -16,7 +16,7 @@ public class InkProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.up * -speed * Time.deltaTime;
+        transform.position += transform.right * speed * Time.deltaTime;
 
         //// Check for collision with player or screen boundaries
         //if (Physics2D.OverlapCircle(transform.position, GetComponent<CircleCollider2D>().radius, playerLayer) ||
