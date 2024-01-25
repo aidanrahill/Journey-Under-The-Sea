@@ -20,4 +20,9 @@ public class LobbySceneLoader : MonoBehaviour
     #endif
 }
 
+public void LoadCreditsScene ()
+{
+    SceneManager.LoadScene("Credits");
+}
+
 }
