@@ -16,6 +16,8 @@ public class SquidBoss : MonoBehaviour
     public float shotDelay = 1;
     Boolean movingForward = true;
 
+    public AudioSource ShootInk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,8 @@ public class SquidBoss : MonoBehaviour
             Debug.Log("angle" + angle);
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
+            // play sound
+            ShootInk.Play();
 
             ShootProjectile();
             Debug.Log("created " + i);
