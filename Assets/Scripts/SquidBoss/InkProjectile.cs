@@ -10,7 +10,7 @@ public class InkProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("Despawn", 5f);
     }
 
     // Update is called once per frame
@@ -24,5 +24,10 @@ public class InkProjectile : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+    }
+
+    void Despawn ()
+    {
+        Destroy(gameObject);
     }
 }
