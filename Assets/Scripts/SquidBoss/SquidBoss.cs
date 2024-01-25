@@ -69,10 +69,11 @@ public class SquidBoss : MonoBehaviour
 
             Debug.Log("preangle" + angle);
 
-            angle -= 90;
+            angle-= 90;
             angle = angle % 360;
             if (angle > 180)
                 angle -= 360;
+            angle = -(angle + 180);
 
             Debug.Log("angle" + angle);
             transform.rotation = Quaternion.Euler(0, 0, angle);
