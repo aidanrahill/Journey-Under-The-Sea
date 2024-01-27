@@ -7719,7 +7719,7 @@ MonoBehaviour:
   - {fileID: 951226703}
   speed: 8
   shotDelay: 0.5
-  ShootInk: {fileID: 0}
+  ShootInk: {fileID: 1635043934}
 --- !u!82 &1635043934
 AudioSource:
   m_ObjectHideFlags: 0
