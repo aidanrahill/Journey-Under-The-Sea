@@ -5,6 +5,6 @@ public class LobbySceneLoader : MonoBehaviour
 {
     public void LoadLobbyScene()
     {
-        SceneManager.LoadScene("Lobby Scene"); // Make sure the scene name matches exactly
+        SceneManager.LoadScene("1.0"); // Make sure the scene name matches exactly
     }
 }
