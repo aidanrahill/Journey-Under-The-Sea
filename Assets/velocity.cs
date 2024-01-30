@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpriteAnimationController : MonoBehaviour
 {
     private Animator animator;
-    private Rigidbody2D rb;
+   private Rigidbody2D rb;
 
     void Start()
     {
@@ -12,7 +12,7 @@ public class SpriteAnimationController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void UpdateAnimation()
     {
         // Check the velocity of the Rigidbody2D component
         float velocity = rb.velocity.magnitude;
@@ -23,7 +23,7 @@ public class SpriteAnimationController : MonoBehaviour
 
         // Change state based on velocity
         // For example, switch to swimming animation if velocity is above a certain threshold
-        if (velocity > 0.1f) // You can adjust this threshold
+        if (velocity > 1f) // You can adjust this threshold
         {
             animator.SetBool("IsSwimming", true);
         }
