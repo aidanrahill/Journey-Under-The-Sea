@@ -49,13 +49,15 @@ namespace TarodevController
         public event Action Jumped;
 
         #endregion
-
+        private Animator _animator;
         private float _time;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
+            _animator = GetComponent<Animator>();
+
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
             lastDamaged = 0;
@@ -65,8 +67,30 @@ namespace TarodevController
         {
             _time += Time.deltaTime;
             GatherInput();
+            UpdateAnimation();
         }
 
+
+        void UpdateAnimation()
+        {
+            // Check the velocity of the Rigidbody2D component
+            float velocity = _rb.velocity.magnitude;
+
+            // Set the Animator's parameter based on the velocity
+            // Assuming we have a float parameter named "Velocity" in the Animator
+           // _animator.SetFloat("Velocity", velocity);
+
+            // Change state based on velocity
+            // For example, switch to swimming animation if velocity is above a certain threshold
+            if (velocity > 2f) // You can adjust this threshold
+            {
+                _animator.SetBool("IsSwimming", true);
+            }
+            else
+            {
+                _animator.SetBool("IsSwimming", false);
+            }
+        }
         private void GatherInput()
         {
             _frameInput = new FrameInput
@@ -244,5 +268,7 @@ namespace TarodevController
         public event Action Jumped;
         public Vector2 FrameInput { get; }
     }
+
+
 
 }

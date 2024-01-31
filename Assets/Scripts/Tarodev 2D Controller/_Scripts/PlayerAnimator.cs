@@ -64,6 +64,24 @@ namespace TarodevController
             HandleIdleSpeed();
 
             HandleCharacterTilt();
+
+            HandleIdleAnimation();
+        }
+
+
+        private void HandleIdleAnimation()
+        {
+            // Check if there is no keyboard input (assuming horizontal input is used for movement)
+            if (Mathf.Approximately(_player.FrameInput.x, 0))
+            {
+                // Transition to idle animation state
+                // Assuming you have a boolean parameter named "IsIdle" in your Animator
+                _anim.SetBool("isSwimming", false);
+            }
+            else
+            {
+                _anim.SetBool("isSwimming", true);
+            }
         }
 
         private void HandleSpriteFlip()
