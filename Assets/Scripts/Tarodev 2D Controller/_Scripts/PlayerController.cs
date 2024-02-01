@@ -21,6 +21,14 @@ namespace TarodevController
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
         private float lastDamaged, invincibilityTime;
+        void Damage(int amount)
+        {
+            if (Time.timeSinceLevelLoad - lastDamaged >= invincibilityTime)
+            {
+                lastDamaged = Time.timeSinceLevelLoad;
+                Debug.Log("damage " + amount);
+            }
+        }
         //private void OnTriggerEnter2D(Collider2D coll)
         //{
         //    GameObject obj = coll.gameObject;

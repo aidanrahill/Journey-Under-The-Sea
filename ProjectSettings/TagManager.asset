@@ -7,9 +7,6 @@ TagManager:
   - NPC
   - Damage
   - trans
-  - rocks
-  - Projectile
-  - HurtEnemy
   layers:
   - Default
   - TransparentFX

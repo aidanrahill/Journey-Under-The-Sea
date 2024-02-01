@@ -10,7 +10,7 @@ namespace TarodevController
         [Header("References")] [SerializeField]
         private Animator _anim;
 
-        [SerializeField] public SpriteRenderer _sprite;
+        [SerializeField] private SpriteRenderer _sprite;
 
         [Header("Settings")] [SerializeField, Range(1f, 3f)]
         private float _maxIdleSpeed = 2;

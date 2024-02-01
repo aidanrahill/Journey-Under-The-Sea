@@ -123,11 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &157095791 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1544650614272011795, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+--- !u!1 &157095782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1544650614272011804, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
   m_PrefabInstance: {fileID: 977706447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &157095787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157095782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd551d519723424aa2d3d431d4b4537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  words: []
 --- !u!1 &911370025
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +152,6 @@ GameObject:
   - component: {fileID: 911370026}
   - component: {fileID: 911370028}
   - component: {fileID: 911370027}
-  - component: {fileID: 911370029}
   m_Layer: 0
   m_Name: Midground
   m_TagString: Untagged
@@ -1775,42 +1787,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &911370029
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911370025}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
 --- !u!1001 &977706447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1863,14 +1839,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 6611621761970298053, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 1579788184}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1544650614272011804, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 157095787}
   m_SourcePrefab: {fileID: 100100000, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
 --- !u!1 &1409418920
 GameObject:
@@ -1918,7 +1893,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1985,7 +1960,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2006,11 +1981,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1579788184 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2537892683768175141, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-  m_PrefabInstance: {fileID: 977706447}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1592361728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,7 +2500,7 @@ GameObject:
   - component: {fileID: 1965716667}
   - component: {fileID: 1965716666}
   m_Layer: 0
-  m_Name: 1.2
+  m_Name: Squid Battle
   m_TagString: trans
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2597,7 +2567,6 @@ GameObject:
   - component: {fileID: 1978076458}
   - component: {fileID: 1978076457}
   - component: {fileID: 1978076456}
-  - component: {fileID: 1978076459}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2648,7 +2617,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2679,20 +2648,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1978076459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978076455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc46896dc31673b4d86bafa2c5ae8494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 157095791}
-  offset: {x: 0, y: 3, z: -1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
