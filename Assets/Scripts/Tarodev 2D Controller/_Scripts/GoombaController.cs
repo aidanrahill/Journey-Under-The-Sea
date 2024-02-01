@@ -139,6 +139,14 @@ namespace TarodevController
         #endregion
 
         private void ApplyMovement() => _rb.velocity = _frameVelocity;
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag.Equals("Harpoon"))
+            {
+                Debug.Log("destroy");
+                Destroy(this.gameObject);
+            }
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
