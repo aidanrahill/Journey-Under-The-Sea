@@ -14,12 +14,13 @@ public class SquidHealth : MonoBehaviour
             hp--;
             if(hp <= 0)
             {
-                Destroy(gameObject);
-                Invoke("Win", 1);
+                Invoke("Win", 3f);
+                Destroy(gameObject.GetComponent<SpriteRenderer>());
+                Destroy(gameObject.GetComponent<SquidBoss>());
             }
         }
     }
-    void Win()
+    public void Win()
     {
         SceneManager.LoadScene("Win");
     }

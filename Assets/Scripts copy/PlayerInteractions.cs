@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.CompareTag("trans"))
         {
             SceneManager.LoadScene(collision.gameObject.name);
+            SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         }
         else if (collision.CompareTag("Damage"))
         {
