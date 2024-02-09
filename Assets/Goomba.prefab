@@ -19893,7 +19893,7 @@ Transform:
   m_GameObject: {fileID: 4100888538698139454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19939,8 +19939,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ec0ca269ec0b4f4fa12877c83d9dd88, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: da0684120cf7c4f36a0c15a369f103ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -29703,6 +29703,7 @@ GameObject:
   - component: {fileID: 5259993463449139032}
   - component: {fileID: 9208182872134425363}
   - component: {fileID: 3649143893971293682}
+  - component: {fileID: 5118468247973158094}
   m_Layer: 6
   m_Name: Goomba
   m_TagString: Damage
@@ -29720,8 +29721,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.96, y: -2.79, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7345621021434475631}
   m_Father: {fileID: 0}
@@ -29847,6 +29848,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.03, y: 1.14}
   m_EdgeRadius: 0
+--- !u!114 &5118468247973158094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791577025404927965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107839710231141fda61b1d11c8f7f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6988732278796675341
 GameObject:
   m_ObjectHideFlags: 0

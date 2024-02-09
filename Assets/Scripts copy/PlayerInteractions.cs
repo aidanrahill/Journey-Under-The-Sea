@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    int maxHealth;
+    float maxBarWidth;
     public int health = 3;
-
+    public RectTransform healthBar;
+    private void Start()
+    {
+        maxHealth = health;
+        maxBarWidth = healthBar.sizeDelta.x;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("trans"))
@@ -31,6 +38,7 @@ public class PlayerInteraction : MonoBehaviour
     public void Damage(int amount)
     {
         health -= amount;
+        healthBar.sizeDelta = new Vector2(maxBarWidth * ((float)health / (float)maxHealth), healthBar.sizeDelta.y);
         if(health <= 0)
         {
             SceneManager.LoadScene("Menu");
